@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Copilot Side Panel",
+  "description": "Opens Copilot in Microsoft Edge's side panel",
+  "version": "0.1",
+  "permissions": [
+    "sidePanel",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://*.microsoft.com/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "web_accessible_resources": [
+    {
+      "matches": ["<all_urls>"],
+      "resources": ["sidepanel.html", "service-worker.js"],
+      "use_dynamic_url": true
+    }
+  ]
+}
